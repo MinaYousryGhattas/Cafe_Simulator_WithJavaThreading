@@ -43,11 +43,11 @@ public class Restaurant {
             }
     }
 
-    public synchronized void order(Customer c) {
+    public  void order(Customer c) {
 
         System.out.println(c.name + " orders the food.");
         try {
-            Thread.sleep(rand.nextInt(1000));
+            Thread.sleep(rand.nextInt(10000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -60,7 +60,7 @@ public class Restaurant {
         }
     }
 
-    public synchronized void eat(Customer c) {
+    public  void eat(Customer c) {
         System.out.println(c.name + " eats the food.");
         try {
             Thread.sleep(rand.nextInt(10000));

@@ -1,6 +1,7 @@
 package Assignment;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +11,7 @@ class ExtendedGUI extends JPanel
 {
     private Restaurant r;
     Timer timer;
-    private Vector<JTextPane> labels;
+    private Vector<JButton> labels;
 
     ExtendedGUI(Restaurant rest)
     {
@@ -21,7 +22,7 @@ class ExtendedGUI extends JPanel
         setLayout(new GridLayout(ix, ix));
         for (int i = 0; i < r.numberoftables; i++)
         {
-            labels.addElement(new JTextPane());
+            labels.addElement(new JButton());
             labels.elementAt(i).setBackground(Color.green);
             labels.elementAt(i).setText("Empty");
             add(labels.elementAt(i));

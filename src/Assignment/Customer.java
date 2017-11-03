@@ -23,7 +23,6 @@ public class Customer extends Thread {
     public void run() {
         r.arrive(this);
         r.Semaphore.acquire(this);
-        r.Enter(this);
         r.order(this);
         r.eat(this);
         r.leave(this);
