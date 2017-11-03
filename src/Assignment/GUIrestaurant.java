@@ -36,6 +36,12 @@ public class GUIrestaurant {
                 for (int i = 0; i < noOfCustomers; i++) {
                     v.elementAt(i).start();
                 }
+                JFrame frame = new JFrame("Restaurant view");
+                frame.setContentPane(new ExtendedGUI(r));
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+
             }
         });
     }
