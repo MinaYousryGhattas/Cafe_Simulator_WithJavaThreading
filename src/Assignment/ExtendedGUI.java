@@ -9,7 +9,7 @@ import java.util.Vector;
 class ExtendedGUI extends JPanel
 {
     private Restaurant r;
-    private Timer timer;
+    Timer timer;
     private Vector<JTextPane> labels;
 
     ExtendedGUI(Restaurant rest)
