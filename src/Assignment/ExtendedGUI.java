@@ -17,6 +17,7 @@ class ExtendedGUI extends JPanel
     {
         r = rest;
         labels = new Vector<>();
+        setPreferredSize(new Dimension(500, 150));
         double x = Math.sqrt(r.numberoftables);
         int ix = (int) Math.ceil(x);
         setLayout(new GridLayout(ix, ix));
@@ -24,7 +25,7 @@ class ExtendedGUI extends JPanel
         {
             labels.addElement(new JButton());
             labels.elementAt(i).setBackground(Color.green);
-            labels.elementAt(i).setText("Empty");
+            labels.elementAt(i).setText("Table: "+Integer.toString(i+1));
             add(labels.elementAt(i));
         }
         timer = new Timer(10,updater);
@@ -39,7 +40,7 @@ class ExtendedGUI extends JPanel
                 if (r.tables[i] == null)
                 {
                     labels.elementAt(i).setBackground(Color.GREEN);
-                    labels.elementAt(i).setText("Empty");
+                    labels.elementAt(i).setText("Table: "+Integer.toString(i+1));
                 }
                 else
                 {

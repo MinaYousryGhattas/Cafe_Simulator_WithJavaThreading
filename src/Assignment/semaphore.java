@@ -43,7 +43,17 @@ public class semaphore {
                 c.join();
             } catch (InterruptedException e)
             {
-                c.r.Enter(c);
+                synchronized (this)
+                {
+                    try{
+                        c.sleep(1000);
+                    } catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+
+                    c.r.Enter(c);
+                }
             }
         }
 
