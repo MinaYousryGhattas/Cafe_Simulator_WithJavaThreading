@@ -25,17 +25,38 @@ public class semaphore {
 
     public  void acquire(Customer c)
     {
-        synchronized (this){counter--;}
+        synchronized (this)
+        {
+            counter--;
+            if (counter >= 0)
+            {
+                c.r.Enter(c);
+                return;
+            }
+        }
+
         if (counter<0)
         {
             queue.add(c);
-            try {
+            try
+            {
                 c.join();
-            } catch (InterruptedException e) {
-                //System.out.println("Exceeption");
-                //e.printStackTrace();
+            } catch (InterruptedException e)
+            {
+                synchronized (this)
+                {
+                    try{
+                        c.sleep(1000);
+                    } catch (InterruptedException e1)
+                    {
+                        e1.printStackTrace();
+                    }
+
+                    c.r.Enter(c);
+                }
             }
         }
+
     }
     public synchronized void release()
     {
