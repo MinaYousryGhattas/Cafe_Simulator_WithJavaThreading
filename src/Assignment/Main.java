@@ -9,7 +9,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.print("Enter no of tables: ");
-        Scanner sc = new Scanner(System.in);
+        Scanner
+ sc = new Scanner(System.in);
         int noOfTables = sc.nextByte();
 
         Restaurant r = new Restaurant(noOfTables);
